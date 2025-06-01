@@ -19,8 +19,8 @@ func NewCalendar() *Calendar {
 	now := time.Now()
 	return &Calendar{
 		output: output,
-		year:   now.Year(),
 		month:  now.Month(),
+		year:   now.Year(),
 	}
 }
 
@@ -49,10 +49,8 @@ func (c *Calendar) Render() {
 	for week := 0; week < 6; week++ {
 		for weekday := 0; weekday < 7; weekday++ {
 			if week == 0 && weekday < startWeekday {
-				// Empty space before month starts
 				fmt.Print("    ")
 			} else if day <= numDays {
-				// Style the day number
 				dayStr := fmt.Sprintf("%2d", day)
 				var styledDay termenv.Style
 				
@@ -75,8 +73,6 @@ func (c *Calendar) Render() {
 			break
 		}
 	}
-	
-	fmt.Println()
 }
 
 func (c *Calendar) NextMonth() {
