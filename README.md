@@ -3,6 +3,7 @@
 ## Build
 ```sh
 go mod download
-go build```
+go build
+```
 
 # Made with ❤️
